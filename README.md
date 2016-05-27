@@ -3,4 +3,5 @@ bower-redactor [![npm version](https://badge.fury.io/js/bower-redactor.svg)](htt
 
 An unofficial bower package for [Imperavi's Redactor](http://imperavi.com/redactor/).
 
-This was made for personal use.
+This was made ONLY for personal use.
+
