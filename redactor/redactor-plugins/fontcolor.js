@@ -1,8 +1,6 @@
-if (!RedactorPlugins) var RedactorPlugins = {};
-
 (function($)
 {
-	RedactorPlugins.fontcolor = function()
+	$.Redactor.prototype.fontcolor = function()
 	{
 		return {
 			init: function()
@@ -16,13 +14,13 @@ if (!RedactorPlugins) var RedactorPlugins = {};
 					'#7f7f7f', '#0c0c0c', '#1d1b10', '#0f243e', '#244061', '#632423', '#4f6128', '#3f3151', '#31859b',  '#974806', '#7f6000'
 				];
 
-				var buttons = ['fontcolor', 'backcolor'];
+				var buttons = ['backcolor', 'fontcolor'];
 
 				for (var i = 0; i < 2; i++)
 				{
 					var name = buttons[i];
 
-					var button = this.button.add(name, this.lang.get(name));
+					var button = this.button.addAfter('fontsize', name, this.lang.get(name));
 					var $dropdown = this.button.addDropdown(button);
 
 					$dropdown.width(242);

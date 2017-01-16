@@ -1,8 +1,6 @@
-if (!RedactorPlugins) var RedactorPlugins = {};
-
 (function($)
 {
-	RedactorPlugins.fontfamily = function()
+	$.Redactor.prototype.fontfamily = function()
 	{
 		return {
 			init: function ()
@@ -16,9 +14,9 @@ if (!RedactorPlugins) var RedactorPlugins = {};
 					dropdown['s' + i] = { title: s, func: function() { that.fontfamily.set(s); }};
 				});
 
-				dropdown.remove = { title: 'Remove Font Family', func: that.fontfamily.reset };
+				dropdown.remove = { title: this.lang.get('fontfamily_remove'), func: that.fontfamily.reset };
 
-				var button = this.button.add('fontfamily', 'Change Font Family');
+				var button = this.button.addAfter('alignment', 'fontfamily', this.lang.get('fontfamily'));
 				this.button.addDropdown(button, dropdown);
 
 			},
