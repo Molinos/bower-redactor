@@ -7750,6 +7750,15 @@
 					{
 						var node2 = this.selection.getMarker(2);
 						this.selection.setMarker(this.range, node2, false);
+
+						/* BUGFIX
+							https://stackoverflow.com/questions/43674400/redactor-editor-text-format-issues-with-chrome-version-58
+							https://bugs.chromium.org/p/chromium/issues/detail?id=712579
+						*/
+						if (this.utils.browser('chrome')) {
+							this.caret.set(node1, 0, node2, 0);
+						}
+						/* BUGFIX */
 					}
 
 					this.savedSel = this.$editor.html();
